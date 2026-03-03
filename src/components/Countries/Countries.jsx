@@ -8,7 +8,7 @@ const Countries = ({countriesPromise}) => {
         <div>
             <h1>In The Countries</h1>
             <p>Countries: {countries.length}</p>
-            <div>
+            <div className='grid grid-cols-3 gap-2'>
                 {
                     countries.map(country => <Country key={country.cca3.cca3} country={country}></Country>)
                 }
