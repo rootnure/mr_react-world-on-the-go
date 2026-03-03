@@ -8,6 +8,7 @@ const Countries = ({countriesPromise}) => {
 
     const handleVisitedCountries = (country) => {
         console.log(country);
+        setVisitedCountries([...visitedCountries, country]);
     }
 
     const {countries} = use(countriesPromise);
@@ -15,6 +16,12 @@ const Countries = ({countriesPromise}) => {
         <div>
             <h1>In The Countries</h1>
             <p>Countries: {countries.length}</p>
+            <p>Visited Countries: {visitedCountries.length}</p>
+            <ol>
+            {
+                visitedCountries.map(country => <li key={country.cca3.cca3}>{country.name.common}</li>)
+            }
+            </ol>
             <div className='grid grid-cols-3 gap-2'>
                 {
                     countries.map(country => <Country
